@@ -31,6 +31,7 @@ Available on Google Play → [**Install here**](https://play.google.com/store/ap
 | `vision_service/` | Python + YOLOv3 detection               |
 | `firmware/`       | ESP32 firmware                          |
 | `docs/`           | System Architecture                     |
+
 ---
 
 ## 🎥 Vision Service In Action
@@ -42,6 +43,29 @@ Below are real detection samples showing how the YOLO-based module tracks vehicl
 | ![](vision_service/processed_image_1.jpg) | ![](vision_service/processed_image_2.jpg) |
 
 This ROI logic ensures the system knows if a car enters or exits the parking area, reducing manual work for security.
+
+---
+
+## 🔌 Hardware Prototype
+
+This project includes a real ESP32-based custom PCB prototype mounted inside the old remote enclosure.  
+The module connects its relay in parallel with the original button, so the gate can still be opened manually or via Wi-Fi.
+
+![PCB Prototype](docs/hardware/pcb_prototype.jpg)
+![Enclosure](docs/hardware/pcb_in_box.jpg)
+
+**Wiring diagram:** [scheme](docs/hardware/scheme.pdf)
+
+### Bill of Materials
+
+| Part              | Description                               |
+|-------------------|-------------------------------------------|
+| ESP32-WROVER      | Wi-Fi microcontroller                     |
+| Relay Module (5V) | Switches the original gate button circuit |
+| 5V Power Supply   | Powers the module safely                  |
+| Reused Enclosure  | Old remote casing, adapted for PCB        |
+
+This simple prototype ensures easy installation and stable operation up to ~30 meters from the gate.
 
 ---
 
