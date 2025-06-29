@@ -30,7 +30,7 @@ Available on Google Play → [**Install here**](https://play.google.com/store/ap
 | `desktop_app/`    | Guard Desktop app                       |
 | `vision_service/` | Python + YOLOv3 detection               |
 | `firmware/`       | ESP32 firmware                          |
-| `docs/`           | System Architecture                     |
+| `docs/`           | Schemes and diagrams                    |
 
 ---
 
@@ -56,7 +56,7 @@ The module connects its relay in parallel with the original button, so the gate 
 | ![](docs/hardware/pcb_prototype.jpg)      | ![](docs/hardware/pcb_in_box.jpg)         |
 
 
-**Wiring diagram:** [scheme](docs/hardware/scheme.pdf)
+### Wiring diagram: [scheme](docs/hardware/scheme.pdf)
 
 
 ### Bill of Materials
