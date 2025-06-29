@@ -1,9 +1,5 @@
 #include <Arduino.h>
-#if defined(ESP32)
 #include <WiFi.h>
-#elif defined(ESP8266)
-#include <ESP8266WiFi.h>
-#endif
 #include <Firebase_ESP_Client.h>
 #include <Wire.h>
 
@@ -14,18 +10,18 @@
 #include "addons/RTDBHelper.h"
 
 
-const char* WIFI_SSID = "Wifi";
-const char* WIFI_PASSWORD = "artofwar3";
+const char* WIFI_SSID = "YOUR_WIFI_SSID"; // Insert your WiFi SSID
+const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD"; // Insert your WiFi Password
 
 // Insert Firebase project API Key
-#define API_KEY "AIzaSyDBZ1E652kt2XmItr5IB6sKsW1Ql4l_SxY"
+#define API_KEY "YOUR_FIREBASE_API_KEY"
 
 // Insert Authorized Email and Corresponding Password
-#define USER_EMAIL "kbtuactivator@kbtu.kz"
-#define USER_PASSWORD "ali278578"
+#define USER_EMAIL "activator@example.kz"
+#define USER_PASSWORD "YOUR_FIREBASE_PASSWORD"
 
-// Insert RTDB URLefine the RTDB URL
-#define DATABASE_URL "https://kbtu-4554c-default-rtdb.firebaseio.com/"
+
+#define DATABASE_URL "https://your-project-id.firebaseio.com/" // Insert your RTDB URL, e.g. https://your-project-id.firebaseio.com/
 
 
 FirebaseData fbdo;

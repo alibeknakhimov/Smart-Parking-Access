@@ -59,7 +59,7 @@ The module connects its relay in parallel with the original button, so the gate 
 | ![](docs/hardware/pcb_prototype.jpg)      | ![](docs/hardware/pcb_in_box.jpg)         |
 
 
-### Wiring diagram: [scheme](docs/hardware/scheme.pdf)
+### ⚡ Wiring diagram: [scheme](docs/hardware/scheme.pdf)
 
 
 ### Bill of Materials
@@ -75,8 +75,8 @@ The module connects its relay in parallel with the original button, so the gate 
 
 ## 🔒 Security Notes
 
-* Firebase Auth protects all gate commands (`open_barrier`).
-* RTDB rules validate `uid`.
+* Firebase Auth protects all gate commands.
+* RTDB Rules validate `uid` and confirm that geolocation is within an allowed radius.
 * ESP32 uses secure HTTPS requests.
 
 ---
@@ -85,4 +85,10 @@ The module connects its relay in parallel with the original button, so the gate 
 
 * Full working deployment: **tested hardware, AI tracking, and mobile app in store**.
 * Clear data flow: user → cloud → edge module → gate.
+
+---
+
+⚠️ **Important:** Firebase credentials and YOLO model files are not stored in this repo.  
+Follow [`docs/SETUP.md`](docs/SETUP.md) to configure your local environment.
+
 
