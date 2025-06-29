@@ -104,14 +104,3 @@ examples/        # Example reports and screenshots
 ![Desktop App](docs/screenshots/desktop_app.png)
 ![Excel Report](docs/screenshots/excel_report.png)
 
----
-
-## License
-
-MIT License
-
----
-
-## Contact
-
-For questions or collaboration, contact [your.email@example.com](mailto:your.email@example.com)
