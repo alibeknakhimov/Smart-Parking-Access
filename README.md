@@ -20,7 +20,7 @@ Available on Google Play → [**Install here**](https://play.google.com/store/ap
 See the system in action:
 👉 [**Watch demo video**](https://youtube.com/shorts/GWC538LzXvY?si=RjAnugeAoCX3KMdn)
 
-The video shows mobile app sending the `open_barrier` signal and gate open
+The video shows mobile app sending the `open_barrier` and gate opens
 
 ---
 
