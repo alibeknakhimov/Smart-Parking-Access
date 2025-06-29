@@ -6,7 +6,7 @@ A **real-world IoT + Computer Vision system** for automating barrier gate access
 
 ---
 
-## 📱 Try the App
+## 📱 Mobile App
 
 Available on Google Play → [**Install here**](https://play.google.com/store/apps/details?id=com.web.kbtu&pcampaignid=web_share)
 
