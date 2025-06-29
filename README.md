@@ -24,14 +24,24 @@ Available on Google Play → [**Install here**](https://play.google.com/store/ap
 
 ## 🗂️ Project structure
 
-```
-Smart-Parking-Access/
-├─ mobile_app/        # Flutter Android/iOS app
-├─ desktop_app/       # Guard Desktop app
-├─ firmware/          # ESP32 (PlatformIO)
-├─ vision_service/    # Python + YOLOv3 detection
-├─ docs/diagram.png   # System Architecture
-```
+| Folder            | Description                             |
+|-------------------|-----------------------------------------|
+| `mobile_app/`     | Flutter Android/iOS app                 |
+| `desktop_app/`    | Guard Desktop app                       |
+| `vision_service/` | Python + YOLOv3 detection               |
+| `firmware/`       | ESP32 firmware                          |
+| `docs/`           | System Architecture                     |
+---
+
+## 🎥 Vision Service In Action
+
+Below are real detection samples showing how the YOLO-based module tracks vehicle movement through the barrier:
+
+|           Empty Gate (ROIs set)           |      Vehicle Detected (Crossing ROI)      |
+| :---------------------------------------: | :---------------------------------------: |
+| ![](vision_service/processed_image_1.jpg) | ![](vision_service/processed_image_2.jpg) |
+
+This ROI logic ensures the system knows if a car enters or exits the parking area, reducing manual work for security.
 
 ---
 
@@ -47,5 +57,4 @@ Smart-Parking-Access/
 
 * Full working deployment: **tested hardware, AI tracking, and mobile app in store**.
 * Clear data flow: user → cloud → edge module → gate.
-
 
