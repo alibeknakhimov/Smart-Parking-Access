@@ -1,106 +1,51 @@
-# Smart Parking Access
+# Smart Parking Access 🚗🔐
 
-## Overview
+A **real-world IoT + Computer Vision system** for automating barrier gate access for university staff. The project replaces lost RF remotes and costly wired LPR cameras with a mobile app, a custom ESP32 PCB module, and an AI vision service.
 
-Smart Parking Access is a comprehensive solution for university staff to access parking lots easily and securely, eliminating the need for physical remotes and expensive camera installations. The system leverages a mobile app, a custom ESP32-based hardware module, a desktop control application, and a local computer vision service for vehicle detection.
-
----
-
-## Features
-
-- **Mobile App (Flutter, Android/iOS):**  
-  Staff can open the barrier via a secure app with Firebase authentication.
-- **Custom Hardware (ESP32):**  
-  Controls the barrier by simulating button press upon receiving a signal from the cloud.
-- **Desktop Control App (Flutter Desktop):**  
-  Manages access logs, staff registration, and generates Excel reports.
-- **Vision Service (Python, YOLOv3):**  
-  Detects vehicle entry/exit using video stream and ROI-based logic.
-- **Cloud Database (Firebase):**  
-  Stores user data, access logs, and synchronizes signals between components.
+![System Architecture](docs/diagram.png)
 
 ---
 
-## Architecture
+## 📱 Try the App
 
-![Architecture Diagram](docs/architecture.png) <!-- Add your diagram here -->
-
-1. **User** requests access via the mobile app.
-2. **Signal** is sent to Firebase with user credentials.
-3. **ESP32 module** listens for open commands and triggers the barrier.
-4. **Desktop app** monitors video feed, detects vehicle movement using YOLOv3, and logs events.
-5. **Excel reports** are generated for security staff.
+Available on Google Play → [**Install here**](https://play.google.com/store/apps/details?id=com.web.kbtu&pcampaignid=web_share)
 
 ---
 
-## Getting Started
+## ⚡ How it works
 
-### Prerequisites
+* **Mobile App (Flutter)**: Checks geolocation, authenticates via Firebase, and sends an `open_barrier` signal.
+* **Firebase (RTDB + Auth)**: Stores barrier state, verifies user identity, and forwards commands securely.
+* **Custom PCB (ESP32)**: Listens for open commands and switches relay contacts to trigger the gate.
+* **Vision Service (YOLOv3)**: Monitors video feed, detects vehicle direction, and logs entry/exit.
+* **Guard Desktop (Flutter + Python)**: CRUD for users, live status, and export to XLS.
 
-- Flutter SDK (for mobile and desktop apps)
-- Python 3.x (for vision service)
-- ESP32 Wrover board
-- Firebase account
+---
 
-### Installation
+## 🗂️ Project structure
 
-#### 1. Mobile App
-
-```bash
-cd mobile_app
-flutter pub get
-flutter run
+```
+Smart-Parking-Access/
+├─ mobile_app/        # Flutter Android/iOS app
+├─ desktop_app/       # Guard Desktop app
+├─ firmware/          # ESP32 (PlatformIO)
+├─ vision_service/    # Python + YOLOv3 detection
+├─ docs/diagram.png   # System Architecture
 ```
 
-#### 2. Desktop App
+---
 
-```bash
-cd desktop_app
-flutter pub get
-flutter run
-```
+## 🔒 Security Notes
 
-#### 3. Vision Service
-
-```bash
-cd vision_service
-pip install -r requirements.txt
-python main.py
-```
-
-#### 4. ESP32 Firmware
-
-- Flash the provided firmware to your ESP32 board
+* Firebase Auth protects all gate commands (`open_barrier`).
+* RTDB rules validate `uid`.
+* ESP32 uses secure HTTPS requests.
 
 ---
 
-## Usage
+## ✅ Highlights
 
-1. Register staff in the desktop app.
-2. Staff logs in via the mobile app and requests access.
-3. ESP32 module opens the barrier.
-4. Vision service detects vehicle movement and logs the event.
-5. Security staff can export access logs to Excel.
+* Full working deployment: **tested hardware, AI tracking, and mobile app in store**.
+* Clear data flow: user → cloud → edge module → gate.
 
----
-
-## 🗂 Folder Structure
-
-| Folder            | Description                             |
-|-------------------|-----------------------------------------|
-| `mobile_app/`     | Flutter mobile app                      |
-| `desktop_app/`    | Flutter desktop app                     |
-| `vision_service/` | Python YOLOv3 service                   |
-| `hardware/`       | ESP32 firmware and wiring diagrams      |
-| `docs/`           | Documentation and diagrams              |
-| `examples/`       | Example reports and screenshots         |
-
----
-
-## Screenshots
-
-<!-- Add screenshots here -->
-![Mobile App](docs/screenshots/mobile_app.png)
-![Desktop App](docs/screenshots/desktop_app.png)
-![Excel Report](docs/screenshots/excel_report.png)
 
