@@ -1,0 +1,25 @@
+!! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+
+Dart Code extension: 3.64.0
+Flutter extension: 3.64.0 (activated)
+
+App: Visual Studio Code
+Version: 1.78.2
+Platform: mac
+
+HTTP_PROXY: undefined
+NO_PROXY: undefined
+
+Logging Categories:
+    FlutterDaemon
+
+Fri May 12 2023 [17:33:45 GMT+0600 (East Kazakhstan Time)] Log file started
+[5:33:45 PM] [FlutterDaemon] [Info] Spawning /Users/Student/Documents/flutter/bin/flutter with args ["daemon"]
+[5:33:45 PM] [FlutterDaemon] [Info] ..  in /Users/Student/Documents/flutter
+[5:33:45 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[5:33:45 PM] [FlutterDaemon] [Info]     PID: 8818
+[5:33:45 PM] [FlutterDaemon] [Error] shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+[5:33:45 PM] [FlutterDaemon] [Error] shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+[5:33:45 PM] [FlutterDaemon] [Error] bash: /Users/Student/Documents/flutter/bin/flutter: Operation not permitted
+[5:33:45 PM] [FlutterDaemon] [Info] Process /Users/Student/Documents/flutter/bin/flutter terminated! 126, null
+Fri May 12 2023 [17:33:51 GMT+0600 (East Kazakhstan Time)] Log file ended

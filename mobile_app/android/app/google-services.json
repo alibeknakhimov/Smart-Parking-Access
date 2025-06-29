@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "417854260659",
+    "firebase_url": "https://kbtu-4554c-default-rtdb.firebaseio.com",
+    "project_id": "kbtu-4554c",
+    "storage_bucket": "kbtu-4554c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417854260659:android:586445cc28dd780929b7c6",
+        "android_client_info": {
+          "package_name": "com.web.kbtu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417854260659-tj43vmrcan2vvmaft5dglf9okdtagh66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBZ1E652kt2XmItr5IB6sKsW1Ql4l_SxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417854260659-tj43vmrcan2vvmaft5dglf9okdtagh66.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "417854260659-djhuliji7vu2r5a2l0bavuro8pvhbsi0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.kbtu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
