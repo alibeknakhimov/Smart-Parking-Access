@@ -51,8 +51,9 @@ This ROI logic ensures the system knows if a car enters or exits the parking are
 This project includes a real ESP32-based custom PCB prototype mounted inside the old remote enclosure.  
 The module connects its relay in parallel with the original button, so the gate can still be opened manually or via Wi-Fi.
 
-![PCB Prototype](docs/hardware/pcb_prototype.jpg)
-![Enclosure](docs/hardware/pcb_in_box.jpg)
+|             PCB Prototype                 |               Enclosure                   |
+| :---------------------------------------: | :---------------------------------------: |
+| ![](docs/hardware/pcb_prototype.jpg)      | ![](docs/hardware/pcb_in_box.jpg)         |
 
 **Wiring diagram:** [scheme](docs/hardware/scheme.pdf)
 
@@ -64,8 +65,6 @@ The module connects its relay in parallel with the original button, so the gate 
 | Relay Module (5V) | Switches the original gate button circuit |
 | 5V Power Supply   | Powers the module safely                  |
 | Reused Enclosure  | Old remote casing, adapted for PCB        |
-
-This simple prototype ensures easy installation and stable operation up to ~30 meters from the gate.
 
 ---
 
