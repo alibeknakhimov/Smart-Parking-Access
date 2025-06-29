@@ -15,6 +15,15 @@ Available on Google Play → [**Install here**](https://play.google.com/store/ap
 
 ---
 
+## 🎥 Video
+
+See the system in action:
+👉 [**Watch demo video**](https://youtube.com/shorts/GWC538LzXvY?si=RjAnugeAoCX3KMdn)
+
+The video shows mobile app sending the `open_barrier` signal and gate open
+
+---
+
 ## ⚡ How it works
 
 * **Mobile App (Flutter)**: Checks geolocation, authenticates via Firebase, and sends an `open_barrier` signal.
