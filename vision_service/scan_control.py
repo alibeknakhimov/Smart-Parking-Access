@@ -14,53 +14,53 @@ firebase_admin.initialize_app(cred, {
 })
 
 
-position = ""  # Глобальная переменная для хранения значения "ВХОД" или "ВыХОД"
+position = ""  
 
 def scan_images():
     url = 'http://admin:Admin123@192.168.20.64:80/ISAPI/Streaming/channels/101/picture'
-    num_frames = 11  # Количество фотографий, которые нужно сделать
+    num_frames = 11 
     for i in range(1, num_frames):
       cap = cv2.VideoCapture(url)
       ret, frame = cap.read()
       if not ret:
           print("Не удалось получить кадр")
           break   
-      filename = f'image_{i}.jpg'  # Генерация имени файла с уникальным номером
+      filename = f'image_{i}.jpg'  
       cv2.imwrite(filename, frame)
       print(f"Фотография {i} сохранена как {filename}")
     cap.release()    
-    global position  # Объявление, что используется глобальная переменная position
+    global position 
     
-    # Загрузка модели и конфигурационного файла
+   
     net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
 
-    # Задание порогового значения для определения объектов
+    
     conf_threshold = 0.5
 
-    # Задайте координаты и размеры областей изображения, которые нужно обработать
+    
     regions_of_interest = [
-        [(1082, 182, 435, 120), (1082, 310, 730, 240)]  # Зоны для каждого изображения
+        [(1082, 182, 435, 120), (1082, 310, 730, 240)]  
     ]
 
     for i in range(1, 11):
         image_path = "image_{}.jpg".format(i)
         img = cv2.imread(image_path)
 
-        car_found = False  # Флаг, указывающий, найдена ли машина
-        car_zone = None  # Переменная для хранения информации о зоне, где найдена машина
+        car_found = False  
+        car_zone = None 
 
         for zone_index, roi in enumerate(regions_of_interest[0]):
             x, y, w, h = roi
             roi_img = img[y:y+h, x:x+w]
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
-            # Запуск детектирования объектов на области изображения
+            
             blob_roi = cv2.dnn.blobFromImages([roi_img], 1/255, (416, 416), swapRB=True, crop=False)
             net.setInput(blob_roi)
             output_layers_names = net.getUnconnectedOutLayersNames()
             layerOutputs = net.forward(output_layers_names)
 
-            # Подсчет количества машин на изображении
+            
             class_ids = []
             boxes = []
             confidences = []
@@ -80,7 +80,7 @@ def scan_images():
                         confidences.append(float(confidence))
                         boxes.append([x1, y1, box_w, box_h])
 
-            # Выделение машин на изображении
+            
             indexes = cv2.dnn.NMSBoxes(boxes, confidences, conf_threshold, 0.4)
             count_cars = 0
             for j in range(len(boxes)):
@@ -89,13 +89,13 @@ def scan_images():
                     cv2.rectangle(img, (x1, y1), (x1 + box_w, y1 + box_h), (0, 255, 0), 2)
                     count_cars += 1
 
-            # Если найдена машина, сохраняем информацию о зоне
+            
             if count_cars > 0:
                 car_found = True
                 car_zone = zone_index + 1
                 break
 
-        # Вывод информации о зоне, где машина была обнаружена
+       
         if car_found:
             if car_zone == 1:
                 position = "ВХОД"
@@ -103,7 +103,7 @@ def scan_images():
                 position = "ВыХОД"
             print("На изображении {} найдена машина в зоне {} ({}).".format(image_path, car_zone, position))
             
-            break  # Прерывание сканирования остальных изображений
+            break  
 
 
 

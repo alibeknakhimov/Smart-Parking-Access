@@ -8,12 +8,12 @@
 #include <Wire.h>
 
 
-// Provide the token generation process info.
+
 #include "addons/TokenHelper.h"
-// Provide the RTDB payload printing info and other helper functions.
+
 #include "addons/RTDBHelper.h"
 
-// Insert your network credentials
+
 const char* WIFI_SSID = "Wifi";
 const char* WIFI_PASSWORD = "artofwar3";
 
@@ -27,15 +27,15 @@ const char* WIFI_PASSWORD = "artofwar3";
 // Insert RTDB URLefine the RTDB URL
 #define DATABASE_URL "https://kbtu-4554c-default-rtdb.firebaseio.com/"
 
-// Define Firebase objects
+
 FirebaseData fbdo;
 FirebaseAuth auth;
 FirebaseConfig config;
 
-// Variable to save USER UID
+
 String uid;
 
-// Variables to save database paths
+
 String databasePath;
 String tempPath;
 String humPath;
@@ -50,10 +50,10 @@ int pausa;
 unsigned long sendDataPrevMillis = 0;
 unsigned long timerDelay = 2000;
 boolean pol = 0;
-// Initialize BME280
 
 
-// Initialize WiFi
+
+
 void initWiFi() {
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("Connecting to WiFi ..");
@@ -65,7 +65,7 @@ void initWiFi() {
   Serial.println();
 }
 
-// Write float values to the database
+
 void sendInt(String path, int value) {
   if (Firebase.RTDB.setInt(&fbdo, path.c_str(), value)) {
     Serial.print("Writing value: ");
@@ -103,12 +103,12 @@ void readInt() {
     {
       pausa = fbdo.intData();
       Serial.print("Data received: ");
-      Serial.println(pausa); //print the data received from the Firebase database
+      Serial.println(pausa); 
     }
   }
   else
   {
-    Serial.println(fbdo.errorReason()); //print he error (if any)
+    Serial.println(fbdo.errorReason()); 
   }
 }
 void setup() {
@@ -116,35 +116,35 @@ void setup() {
 
   initWiFi();
 
-  // Assign the api key (required)
+  
   config.api_key = API_KEY;
 
-  // Assign the user sign in credentials
+  
   auth.user.email = USER_EMAIL;
   auth.user.password = USER_PASSWORD;
 
-  // Assign the RTDB URL (required)
+  
   config.database_url = DATABASE_URL;
 
   Firebase.reconnectWiFi(true);
   fbdo.setResponseSize(4096);
 
-  // Assign the callback function for the long running token generation task */
-  config.token_status_callback = tokenStatusCallback; //see addons/TokenHelper.h
+  
+  config.token_status_callback = tokenStatusCallback; 
 
-  // Assign the maximum retry of token generation
+  
   config.max_token_generation_retry = 5;
 
-  // Initialize the library with the Firebase authen and config
+  
   Firebase.begin(&config, &auth);
 
-  // Getting the user UID might take a few seconds
+  
   Serial.println("Getting User UID");
   while ((auth.token.uid) == "") {
     Serial.print('.');
     delay(1000);
   }
-  // Print user UID
+  
   uid = auth.token.uid.c_str();
   Serial.print("User UID: ");
   Serial.println(uid);
@@ -168,7 +168,7 @@ void loop() {
       {
         read_data = fbdo.intData();
         Serial.print("Data received: ");
-        Serial.println(read_data); //print the data received from the Firebase database
+        Serial.println(read_data); 
         if (read_data == 1) {
           Serial.println("done");
           pol = 1;
@@ -177,7 +177,7 @@ void loop() {
     }
     else
     {
-      Serial.println(fbdo.errorReason()); //print he error (if any)
+      Serial.println(fbdo.errorReason()); 
     }
   }
   if(pol == 1){
