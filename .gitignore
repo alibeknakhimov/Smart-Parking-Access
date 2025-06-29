@@ -1,0 +1,56 @@
+
+
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+
+*.iml
+*.ipr
+*.iws
+.idea/
+
+
+
+# Flutter / Dart / Pub
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/doc/api/
+**/build/
+**/ios/Flutter/.last_build_id
+
+# Platform-specific ephemeral files
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+macos/Flutter/ephemeral/
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
+
+# Android build folders
+android/app/debug
+android/app/profile
+android/app/release
+
+# Sensitive files
+kbtu-4554c-firebase-adminsdk-log99-e492917432.json
+
+# Symbolication & obfuscation
+app.*.symbols
+app.*.map.json
+
+# YOLO model files
+vision_service/yolov3.weights
+vision_service/yolov3.cfg
