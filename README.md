@@ -55,7 +55,9 @@ The module connects its relay in parallel with the original button, so the gate 
 | :---------------------------------------: | :---------------------------------------: |
 | ![](docs/hardware/pcb_prototype.jpg)      | ![](docs/hardware/pcb_in_box.jpg)         |
 
+
 **Wiring diagram:** [scheme](docs/hardware/scheme.pdf)
+
 
 ### Bill of Materials
 
