@@ -84,16 +84,16 @@ python main.py
 
 ---
 
-## Folder Structure
+## 🗂 Folder Structure
 
-```
-mobile_app/      # Flutter mobile app
-desktop_app/     # Flutter desktop app
-vision_service/  # Python YOLOv3 service
-hardware/        # ESP32 firmware and wiring diagrams
-docs/            # Documentation and diagrams
-examples/        # Example reports and screenshots
-```
+| Folder            | Description                             |
+|-------------------|-----------------------------------------|
+| `mobile_app/`     | Flutter mobile app                      |
+| `desktop_app/`    | Flutter desktop app                     |
+| `vision_service/` | Python YOLOv3 service                   |
+| `hardware/`       | ESP32 firmware and wiring diagrams      |
+| `docs/`           | Documentation and diagrams              |
+| `examples/`       | Example reports and screenshots         |
 
 ---
 
